@@ -1,0 +1,20 @@
+.main {
+    background: #fff;
+    width: 730px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.btn {
+    background-color: #0f88eb;
+    color: white;
+}
+

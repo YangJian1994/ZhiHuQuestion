@@ -1,0 +1,12 @@
+.question-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.question-info span {
+    margin-right: 20px;
+}
+
+.question-content {
+    margin-left: 10px;
+}

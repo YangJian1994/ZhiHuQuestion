@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}登陆{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block main %}
+    <h3 class="page-title">登陆</h3>
+    <form action="" method="post">
+        <div class="form-container">
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="手机号码" name="telephone">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="密码" name="password">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> 记住我
+                </label>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-block">登陆</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
