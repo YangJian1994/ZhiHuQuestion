@@ -10,3 +10,44 @@
 .question-content {
     margin-left: 10px;
 }
+
+.form-group {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h4 {
+    margin-left: 10px;
+}
+
+.comment-list{
+    padding-left: 0;
+}
+
+.comment-list li {
+    list-style: none;
+    border-bottom: 1px solid #eee;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.user-info {
+    font-size: 16px;
+    color: #9b9b9b;
+    line-height: 46px;
+}
+
+.comment-content {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.create-time {
+    float: right;
+    margin-right: 10px;
+}

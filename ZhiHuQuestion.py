@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, session, url_for
 import config
 from exts import db
-from models import User, Question
+from models import User, Question, Comment
 from decorators import login_required
 
 app = Flask(__name__)
@@ -75,6 +75,20 @@ def question():
 def detail(question_id):
     question = Question.query.filter_by(id=question_id).first()
     return render_template('detail.html', question=question)
+
+@app.route('/comment/<question_id>', methods=['POST'])
+def comment(question_id):
+    content = request.form.get('comment_content')
+    comment = Comment(content=content)
+    question = Question.query.filter_by(id=question_id).first()
+    user_id = session.get('user_id')
+    user = User.query.filter_by(id=user_id).first()
+    comment.author = user
+    comment.question = question
+    db.session.add(comment)
+    db.session.commit()
+    return redirect(url_for('detail', question_id=question_id))
+
 
 @app.context_processor
 def my_context_processor():

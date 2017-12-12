@@ -17,4 +17,25 @@
         {{ question.content }}
     </p>
     <hr>
+    <h4>评论：（{{ question.comments | length }}）</h4>
+    <form action="{{ url_for('comment', question_id=question.id) }}" method="post">
+        <div class="form-group">
+            <input name='comment_content' type="text" class="form-control" placeholder="请填写评论">
+        </div>
+        <div class="form-group" style="text-align: right">
+            <button class="btn">立即评论</button>
+        </div>
+    </form>
+    <ul class="comment-list">
+        {% for comment in question.comments %}
+        <li>
+            <div class="user-info">
+                <img class="avatar" src="{{ url_for('static', filename='images/ztfl2.jpg') }}">
+                <span class="username">{{ comment.author.username }}</span>
+                <span class="create-time">{{ comment.create_time }}</span>
+            </div>
+            <p class="comment-content">{{ comment.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
